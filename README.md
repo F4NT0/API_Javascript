@@ -37,4 +37,5 @@ Programa|Para que serve|
 `sudo apt-get install npm`| Serve para instalar NPM no projeto
 `sudo npm install n`| Serve para poder instalar o instalador do node
 `sudo n 10.0.0`| Vai instalar o Node 10.0.0 no projeto
+`sudo npm install sequelize`| Vai instalar o Sequelize no projeto
 `sudo npm install nodemon`| Vai instalar o nodemon, que serve para atualizar automatico o projeto

@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "root",
+    "password": "senha",
+    "database": "fantoapi",
+    "host": "localhost",
+    "dialect": "mysql",
+    "timezone": "America/Sao_Paulo"
+  }
+}
