@@ -1,27 +1,27 @@
-// invocando o Model
-const models = require("./models");
+
+// Chamada dos Requerimentos instalados
 const express = require('express');
-const constants = require("./config/constants");
-const cors = require('cors');
+const logger = require('morgan');
+const bodyParser = require('body-parser');
+const http = require('http');
 
-// Rota do Teste
-const routerTeste = require('./routes/teste');
+const app = express();
 
-// Iniciando o Servidor
-models.sequelize.sync().then(function() {
-    setupServer()
-});
+app.use(logger('dev'));
 
-// Função do Servidor
-function setupServer() {
-    const app = express();
-    app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-    // Chamando a rota de teste
-    app.use('/fantoapi/teste', routerTeste);
+app.get('*', (req, res) => res.status(200).send({
+    message: 'Deu status 200 OK',
+}));
 
-    // Criando um acesso externo
-    app.listen(process.env.port || 4000, function () {
-        console.log("INVOCANDO O FANTO")
-    })
-}
+
+const port = parseInt(process.env.PORT, 10) || 4000;
+app.set('port', port);
+
+const server = http.createServer(app);
+
+server.listen(port);
+
+module.exports = app;

@@ -1,15 +1,30 @@
 {
   "name": "fanto-api",
   "version": "0.0.1",
-  "private": false,
+  "private": true,
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
-    "cors": "^2.8.5",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "morgan": "^1.9.1",
     "mysql2": "^2.1.0",
-    "nodemon": "2.0.2",
-    "sequelize": "^4.37.6"
-  }
+    "nodemon": "^2.0.2",
+    "sequelize": "^5.21.3",
+    "sequelize-cli": "^5.5.1"
+  },
+  "description": "* Estou tentando criar uma API REST com Typescript.",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/F4NT0/API_Javascript.git"
+  },
+  "author": "Gabriel Fanto Stundner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/F4NT0/API_Javascript/issues"
+  },
+  "homepage": "https://github.com/F4NT0/API_Javascript#readme"
 }
