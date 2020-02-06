@@ -1,0 +1,15 @@
+{
+  "name": "fanto-api",
+  "version": "0.0.1",
+  "private": false,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0",
+    "nodemon": "2.0.2",
+    "sequelize": "^4.37.6"
+  }
+}

@@ -38,4 +38,11 @@ Programa|Para que serve|
 `sudo npm install n`| Serve para poder instalar o instalador do node
 `sudo n 10.0.0`| Vai instalar o Node 10.0.0 no projeto
 `sudo npm install sequelize`| Vai instalar o Sequelize no projeto
+`sudo npm install express`| Framework simples para Web com Node.js
+`sudo npm install mysql`| instalando leitor do mysql no projeto
 `sudo npm install nodemon`| Vai instalar o nodemon, que serve para atualizar automatico o projeto
+
+### Rodando a API
+
+* Instale o MYSQL no seu computador e construa um schema chamado `fluxoapi`
+* Inicie o Diretório com nodemon: `nodemon app.js`
