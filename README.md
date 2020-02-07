@@ -1,3 +1,9 @@
+## Se deseja somente usar essa API
+
+* Depois de clonar, rode `npm install` dentro do Diretório.
+* Para iniciar o programa, rode `nodemon` para iniciar
+* **Para configurar para usar (EM CONSTRUÇÃO)**
+
 ## Exemplo de API criada do Inicio
 
 ## Passo 1
@@ -155,3 +161,16 @@ module.exports = (sequelize, DataTypes) => {
   return Teste;
 };
 ```
+
+### Passo 8
+
+* Depois que ele cria o Modelo ele adiciona ao Diretório `models` e cria um arquivo no Diretório `migrations`
+* Qualquer modificação em qualquer um dos arquivos deve ser modificado no outro para estarem pareados
+* Esses Arquivos `migrations` é como irá ser criado o banco de dados, dando um auxilio para se ver como vai ser no Banco de Dados
+* Quando tiver terminado as configurações, iremos rodar o seguinte comando:
+    * `sequelize db:migrate`
+* Esse comando vai rodar e verificar todos os arquivos no diretório `migrations` e criar dentro do MYSQL as Tabelas.
+* Se tentar rodar de novo sem ter feito mudanças, ele não vai reinstalar as Tabelas ja existentes.
+
+### Passo 9
+
