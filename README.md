@@ -174,3 +174,75 @@ module.exports = (sequelize, DataTypes) => {
 
 ### Passo 9
 
+* Agora vamos criar os **Controllers**, que irão nos ajudar com funções para podermos Criar(POST), Buscar(GET), Alterar(PUT) e Deletar(DELETE) no Banco de Dados
+* Criei um Diretório chamado **controller** onde vai ficar todos os Nossos controllers de todos os nossos models
+* Crie um arquivo com o nome do teu model + controller: ex: `testeController.js`
+* Chame o Modelo dentro do Arquivo:
+```javascript
+const teste = require('../models/teste');
+```
+* Agora iremos fazer com que ele crie um novo teste e se conseguir, ele vai transmitir em .json todo o Objeto
+* Se não conseguir ele vai mandar uma mensagem de erro
+```javascript
+module.exports = {
+    create(requisition,response){
+        return teste.create({
+            id: requisition.body.name
+        }).then(teste => response.status(201).send(teste))
+            .catch(error => res.status(400).send(error));
+    }
+};
+```
+* Criamos um GET para pegar os valores de Teste:
+```javascript
+get(requision,response){
+        return teste.get().then(teste => response.status(201).send(teste))
+            .catch(error => res.status(400).send(error));
+    }
+```
+
+* Criamos um arquivo chamado **index.js** dentro do Diretório **controllers** para chamar o nosso novo controller criado
+* Chamamos dessa forma:
+```javascript
+const testeController = require('./testeController');
+
+module.exports = {
+    testeController
+};
+```
+* A cada novo controller criado vamos criando um **const** e adicionando mais uma linha embaixo do Controller
+
+## Passo 10
+
+* Agora iremos criar as Rotas com o Express que baixamos
+* Devemos criar um Diretório chamado **routes** onde iremos colocar nossas Rotas
+* Criamos um arquivo **index.js** dentro do Diretório **routes**
+* Chamamos o nosso Controller dentro do router:
+```javascript
+const testeController =  require('../controllers/testeController');
+```
+* Agora criamos uma rota para chamar as funções de dentro do controller:
+```javascript
+module.exports = (app) => {
+    app.get('/', (requisition,response) => {
+        response.status(200).send({
+            message: 'Conexão da API externamente foi um Sucesso!'
+        })
+    });
+
+    app.get('/teste', testeController.get()) //teste
+};
+```
+* Dessa forma, depois que for colocado o **http://localhost:4000** podemos colocar ou **/** ou **/teste** e chamamos a função definida acima
+
+### Passo 11
+
+* Agora iremos chamar as novas Rotas no **app.js** para que elas sejam ouvidas quando iniciarmos a API, da seguinte forma:
+```javascript
+require('./routes')(app);
+app.get('*', (req, res) => res.status(200).send({
+    message: 'Deu status 200 OK',
+}));
+```
+* Agora quando testarmos no Postman as Rotas ele vai aceitar as novas rotas construidas
+ 
