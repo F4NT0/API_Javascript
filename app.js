@@ -25,4 +25,5 @@ const server = http.createServer(app);
 
 server.listen(port);
 
+console.log("Banco Rodando");
 module.exports = app;

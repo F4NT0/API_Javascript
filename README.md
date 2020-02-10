@@ -175,12 +175,15 @@ module.exports = (sequelize, DataTypes) => {
 ### Passo 9
 
 * Agora vamos criar os **Controllers**, que irão nos ajudar com funções para podermos Criar(POST), Buscar(GET), Alterar(PUT) e Deletar(DELETE) no Banco de Dados
-* Criei um Diretório chamado **controller** onde vai ficar todos os Nossos controllers de todos os nossos models
+* Criei um Diretório chamado **controllers** onde vai ficar todos os Nossos controllers de todos os nossos models
 * Crie um arquivo com o nome do teu model + controller: ex: `testeController.js`
-* Chame o Modelo dentro do Arquivo:
+* Chame o Modelo dentro do Arquivo da seguinte forma:
 ```javascript
-const teste = require('../models/teste');
+const db = require('../models/index');
+const teste = db.sequelize.model('teste'); // isso que nos deixa usar as funções CRUD
 ```
+* o `db` vai pegar o construtor gerado automaticamente no **models/index.js** e com ele podemos usar as funções
+* de CRUD (Create, Read , Update, Delete) do Sequelize construindo a constante **teste** da forma acima
 * Agora iremos fazer com que ele crie um novo teste e se conseguir, ele vai transmitir em .json todo o Objeto
 * Se não conseguir ele vai mandar uma mensagem de erro
 ```javascript
