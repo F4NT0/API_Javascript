@@ -1,3 +1,5 @@
+![Node.js CI](https://github.com/F4NT0/API_Javascript/workflows/Node.js%20CI/badge.svg?branch=master)
+
 ## Se deseja somente usar essa API
 
 * Depois de clonar, rode `npm install` dentro do Diretório.
